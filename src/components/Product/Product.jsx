@@ -15,7 +15,7 @@ const Product = ({data, handlerAddToCart}) => {
                 <p>Manufacturer: {data.seller}</p>
                 <p>Rating: {data.ratings} star</p>
             </div>
-                <button onClick={() => handlerAddToCart(data)} className="py-3 rounded-b-2xl  bg-[#FFE0B3] text-gray-700 hover:bg-yellow-100 transition">Add Cart <FontAwesomeIcon icon={faShoppingCart} /></button>
+                <button onClick={() => handlerAddToCart(data)} className="py-3 rounded-b-2xl bg-secondary  text-gray-700 hover:bg-[#FFE0B3] transition">Add Cart <FontAwesomeIcon icon={faShoppingCart} /></button>
             </div>
         </div>
     );
