@@ -1,7 +1,10 @@
 import React from 'react';
 import noImage from '../../images/no-image.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
-const Product = ({data}) => {
+const Product = ({data, handlerAddToCart}) => {
+    
     return (
         <div>
             <div className="card w-full bg-base-100 border border-gray-300">
@@ -12,7 +15,7 @@ const Product = ({data}) => {
                 <p>Manufacturer: {data.seller}</p>
                 <p>Rating: {data.ratings} star</p>
             </div>
-                <button className="py-3 rounded-b-2xl  bg-[#FFE0B3] text-gray-700 hover:bg-yellow-100 transition">Add Cart</button>
+                <button onClick={() => handlerAddToCart(data)} className="py-3 rounded-b-2xl  bg-[#FFE0B3] text-gray-700 hover:bg-yellow-100 transition">Add Cart <FontAwesomeIcon icon={faShoppingCart} /></button>
             </div>
         </div>
     );
