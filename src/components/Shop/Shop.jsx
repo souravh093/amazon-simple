@@ -23,8 +23,22 @@ const Shop = () => {
 
   useEffect(() => {
     const storedCart = getShoppingCart();
-    console.log(storedCart)
-  }, [])
+    const savedCart = [];
+    // step 1: get of the addProduct
+    for (const id in storedCart) {
+      //step 2: get product from products state by using id
+      const addedProduct = products.find(product => product.id === id);
+      if(addedProduct) {
+        //step 3: add quantity
+        const quantity = storedCart[id];
+        addedProduct.quantity += quantity;
+        // step 4: add the product to the saved cart
+        savedCart.push(addedProduct);
+      }
+      // step 5: saved the cart
+      setCart(savedCart)
+    }
+  }, [products])
 
   return (
     <div className="grid grid-cols-5">
