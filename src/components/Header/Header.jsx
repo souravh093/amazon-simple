@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../images/logo.svg';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -7,10 +8,10 @@ const Header = () => {
             <img src={logo} alt="" />
             <nav>
                 <ul className='flex gap-[32px] text-gray-100'>
-                    <li><a className='hover:text-secondary' href="/order">Order</a></li>
-                    <li><a className='hover:text-secondary' href="/order-review">Order Review</a></li>
-                    <li><a className='hover:text-secondary' href="/manage-inventory">Manage Inventory</a></li>
-                    <li><a className='hover:text-secondary' href="/login">Login</a></li>
+                    <li><Link className='hover:text-secondary' to="/">Shop</Link></li>
+                    <li><Link className='hover:text-secondary' to="/orders">Orders</Link></li>
+                    <li><Link className='hover:text-secondary' to="/inventory">Manage Inventory</Link></li>
+                    <li><Link className='hover:text-secondary' to="/login">Login</Link></li>
                 </ul>
             </nav>
         </div>
