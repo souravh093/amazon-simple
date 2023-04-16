@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import googleLogo from "../../assets/search.png";
+import googleLogo from '../../assets/search.png'
 
-const Login = () => {
+const SignUp = () => {
   return (
     <div className="min-h-[calc(100vh-80px)] flex justify-center items-center">
       <form className="border-2 flex flex-col gap-5 border-gray-300 rounded-md w-[500px] p-10">
-        <h2 className="text-center text-4xl font-semibold">Login</h2>
+        <h2 className="text-center text-4xl font-semibold">Sign Up</h2>
         <div className="flex flex-col gap-1">
           <label htmlFor="">Email</label>
           <input
@@ -29,11 +29,22 @@ const Login = () => {
             placeholder="password"
           />
         </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="">Confirm Password</label>
+          <input
+            type="password"
+            name="confirm"
+            id="confirm"
+            required
+            className="outline-secondary border border-gray-500 px-3 py-2 rounded-md"
+            placeholder="confirm password"
+          />
+        </div>
         <button type="submit" className="bg-secondary py-2 rounded-md">Login</button>
         <p className="text-center">
-          New to Amazon?{" "}
-          <Link className="text-secondary" to="/register">
-            Create New Account
+          Already have an account?{" "}
+          <Link className="text-secondary" to="/login">
+            Login
           </Link>
         </p>
         <div>
@@ -48,4 +59,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

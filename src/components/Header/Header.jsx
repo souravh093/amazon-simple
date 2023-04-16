@@ -12,6 +12,7 @@ const Header = () => {
                     <li><Link className='hover:text-secondary' to="/orders">Orders</Link></li>
                     <li><Link className='hover:text-secondary' to="/inventory">Manage Inventory</Link></li>
                     <li><Link className='hover:text-secondary' to="/login">Login</Link></li>
+                    <li><Link className='hover:text-secondary' to="/register">Sign up</Link></li>
                 </ul>
             </nav>
         </div>
