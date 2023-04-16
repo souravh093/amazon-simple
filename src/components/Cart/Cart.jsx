@@ -1,7 +1,7 @@
 import { ArrowRightIcon, TrashIcon } from '@heroicons/react/24/solid';
 import React from 'react';
 
-const Cart = ({cart, handlerClearCart}) => {
+const Cart = ({cart, handlerClearCart, children}) => {
     
     let totalPrice = 0;
     let totalShipping = 0;
@@ -27,10 +27,8 @@ const Cart = ({cart, handlerClearCart}) => {
                 <button>Clear Cart</button>
                 <TrashIcon className="h-6 w-6 text-gray-100" />
             </div>
-            <div className='bg-orange-600 rounded py-2 px-4 btn border-none flex justify-between  active cursor-pointer text-white'>
-                <button>Review Order</button>
-                <ArrowRightIcon className="h-6 w-6 text-gray-100" />
-            </div>
+            {children}
+            
         </div>
     );
 };

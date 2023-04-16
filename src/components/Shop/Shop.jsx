@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { addToDb, deleteShoppingCart, getShoppingCart } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
+import { Link } from "react-router-dom";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
 const Shop = () => {  
 
@@ -59,7 +61,14 @@ const Shop = () => {
       </div>
       {/* cart container */}
       <div className="col-span-1">
-        <Cart cart={cart} handlerClearCart={handlerClearCart}></Cart>
+        <Cart cart={cart} handlerClearCart={handlerClearCart}>
+            <Link to='/orders'>
+              <div className='bg-orange-600 rounded py-2 px-4 btn border-none flex justify-between  active cursor-pointer text-white'>
+                  <button>Review Order</button>
+                  <ArrowRightIcon className="h-6 w-6 text-gray-100" />
+              </div>
+            </Link>
+        </Cart>
       </div>
     </div>
   );

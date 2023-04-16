@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Cart from "../Cart/Cart";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Review from "../Review/Review";
 import { deleteShoppingCart, removeFromDb } from "../../utilities/fakedb";
+import { ArrowRightIcon, CreditCardIcon } from "@heroicons/react/24/solid";
 
 const Orders = () => {
   const savedCart = useLoaderData();
@@ -34,7 +35,14 @@ const Orders = () => {
       </div>
       {/* cart container */}
       <div className="col-span-1">
-        <Cart rt cart={cart} handlerClearCart={handlerClearCart}></Cart>
+        <Cart rt cart={cart} handlerClearCart={handlerClearCart}>
+            <Link to='/checkout'>
+              <div className='bg-orange-600 rounded py-2 px-4 btn border-none flex justify-between  active cursor-pointer text-white'>
+                  <button>Checkout</button>
+                  <CreditCardIcon className="h-6 w-6 text-gray-100" />
+              </div>
+            </Link>
+        </Cart>
       </div>
     </div>
   );
