@@ -12,7 +12,7 @@ const Shop = () => {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch("products.json")
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -20,7 +20,7 @@ const Shop = () => {
   const handlerAddToCart = (product) => {
     const newCart = [...cart, product]
     setCart(newCart);
-    addToDb(product.id)
+    addToDb(product._id)
   }
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const Shop = () => {
         {products.map((product) => (
           <Product 
            data={product}
-           key={product.id}
+           key={product._id}
            handlerAddToCart={handlerAddToCart}
            ></Product>
         ))}
